@@ -1,0 +1,50 @@
+# Deployment Branch .gitignore
+# This file should be renamed to .gitignore on the deployment branch
+
+# Backend - Keep most files, ignore only sensitive/generated content
+/backend/.env
+/backend/.env.backup
+/backend/.env.production
+/backend/storage/*.key
+/backend/storage/logs/*
+!/backend/storage/logs/.gitignore
+/backend/storage/framework/cache/*
+!/backend/storage/framework/cache/.gitignore
+/backend/storage/framework/sessions/*
+!/backend/storage/framework/sessions/.gitignore
+/backend/storage/framework/views/*
+!/backend/storage/framework/views/.gitignore
+/backend/bootstrap/cache/*
+!/backend/bootstrap/cache/.gitignore
+/backend/vendor/
+/backend/node_modules/
+/backend/.phpactor.json
+
+# Frontend - Ignore dependencies and builds
+/frontend/admin/node_modules/
+/frontend/admin/.env*
+/frontend/admin/dist/
+
+/frontend/client/node_modules/
+/frontend/client/.env*
+/frontend/client/dist/
+
+# IDE and OS files
+.DS_Store
+.vscode/
+.idea/
+*.log
+Thumbs.db
+
+# Sensitive files and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_ed25519

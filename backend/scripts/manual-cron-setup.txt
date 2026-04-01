@@ -1,0 +1,22 @@
+# Manual Cron Job Setup (Alternative Method)
+# If the automatic script doesn't work, run these commands manually:
+
+# 1. Edit crontab
+crontab -e
+
+# 2. Add this line to crontab (replace /var/www/coverrestlb/backend with your actual path):
+* * * * * cd /var/www/coverrestlb/backend && php artisan schedule:run >> /dev/null 2>&1
+
+# 3. Save and exit the crontab editor
+
+# 4. Verify cron job was added:
+crontab -l
+
+# 5. Test Laravel scheduler:
+php artisan schedule:list
+
+# Your scheduled tasks:
+# - Daily full backup: 2:00 AM
+# - Daily database backup: 2:00 PM
+# - Cleanup old backups: Sunday 4:00 AM
+# - Health monitoring: Daily 8:00 AM
